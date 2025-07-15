@@ -136,7 +136,7 @@ const formatFileSize = (bytes) => {
 
 // Check if user can edit/delete file
 const canModifyFile = (file) => {
-    return isAdmin.value || file.uploader_id === currentUserId.value;
+    return isAdmin.value || file.uploaded_by === currentUserId.value;
 };
 
 // Get appropriate layout component

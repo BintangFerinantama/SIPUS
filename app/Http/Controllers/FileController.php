@@ -26,21 +26,8 @@ class FileController extends Controller
     {
         $query = FileModel::with(['rack', 'subRack', 'uploader', 'tags']);
 
-        // If user is not admin, show their own files and files they have access to
-        if (Auth::user()->role !== 'admin') {
-            $userInstansi = Auth::user()->instansi;
-            $query->where(function($q) use ($userInstansi) {
-                $q->where('uploaded_by', Auth::id()) // Own files
-                  ->orWhere(function($q2) use ($userInstansi) {
-                      // Files from same instansi/unit (if instansi field exists)
-                      if ($userInstansi) {
-                          $q2->whereHas('uploader', function($q3) use ($userInstansi) {
-                              $q3->where('instansi', $userInstansi);
-                          });
-                      }
-                  });
-            });
-        }
+        // All approved users can see all files
+        // No restriction based on uploader or instansi
 
         // Search functionality
         if ($request->filled('search')) {
