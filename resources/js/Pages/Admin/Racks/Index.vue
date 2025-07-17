@@ -39,7 +39,7 @@ const cancelDelete = () => {
     <Head title="Racks Management - SIPUS" />
 
     <AdminLayout>
-        <template #header> Racks Management </template>
+        <template #header> Manajemen Rak </template>
 
         <!-- Action Bar -->
         <div
@@ -93,9 +93,9 @@ const cancelDelete = () => {
                     <div
                         class="grid grid-cols-12 gap-4 text-xs font-medium text-charcoal uppercase tracking-wider"
                     >
-                        <div class="col-span-6">Rack Info</div>
-                        <div class="col-span-2">Sub-Racks</div>
-                        <div class="col-span-2">Files Count</div>
+                        <div class="col-span-6">Info Rak</div>
+                        <div class="col-span-2">Sub-Rak</div>
+                        <div class="col-span-2">Jumlah File</div>
                         <div class="col-span-2">Actions</div>
                     </div>
                 </div>

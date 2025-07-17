@@ -146,11 +146,11 @@ const LayoutComponent = computed(() =>
 </script>
 
 <template>
-    <Head :title="isAdmin ? 'Files Management - SIPUS' : 'My Files - SIPUS'" />
+    <Head :title="isAdmin ? 'Files Management - SIPUS' : 'My File - SIPUS'" />
 
     <component :is="LayoutComponent">
         <template #header>
-            {{ isAdmin ? "Files Management" : "My Files" }}
+            {{ isAdmin ? "Manajemen File" : "File" }}
         </template>
 
         <!-- Advanced Filter Section -->
@@ -377,13 +377,13 @@ const LayoutComponent = computed(() =>
                 <div class="flex-1">
                     <h2 class="text-xl font-bold text-gray-900">
                         {{
-                            isAdmin ? "File Library" : "Daftar Semua File"
+                            isAdmin ? "Daftar File" : "Daftar Semua File"
                         }}
                     </h2>
                     <p class="text-sm text-gray-600">
                         {{
                             isAdmin
-                                ? "Manage and organize all files in the system"
+                                ? "Kelola Semua file yang ada Pada Sistem"
                                 : "Kelola file Anda dan lihat file dari unit/divisi lain"
                         }}
                     </p>

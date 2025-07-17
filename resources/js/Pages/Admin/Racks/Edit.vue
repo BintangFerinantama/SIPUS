@@ -32,7 +32,7 @@ const deleteSubRack = (subRackId) => {
     <Head title="Edit Rack - SIPUS" />
 
     <AdminLayout>
-        <template #header> Edit Rack </template>
+        <template #header> Edit Rak </template>
 
         <div class="max-w-4xl mx-auto">
             <!-- Edit Rack Form -->
@@ -40,7 +40,7 @@ const deleteSubRack = (subRackId) => {
                 class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6"
             >
                 <h3 class="text-lg font-semibold text-gray-900 mb-6">
-                    📁 Edit Rack
+                    📁 Edit Rak
                 </h3>
 
                 <form @submit.prevent="submit" class="space-y-6">

@@ -16,7 +16,7 @@ const submit = () => {
     <Head title="Add Rack - SIPUS" />
 
     <AdminLayout>
-        <template #header> Add Rack </template>
+        <template #header> Tambah Rak </template>
 
         <div class="max-w-2xl mx-auto">
             <div

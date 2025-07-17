@@ -124,7 +124,7 @@ const getRoleBadge = (role) => {
                     </div>
                     <div class="ml-4">
                         <p class="text-sm font-medium text-gray-600">
-                            Approved
+                            Disetujui
                         </p>
                         <p class="text-2xl font-bold text-charcoal">
                             {{ stats.approved }}
@@ -156,7 +156,7 @@ const getRoleBadge = (role) => {
                     </div>
                     <div class="ml-4">
                         <p class="text-sm font-medium text-gray-600">
-                            Pending Approval
+                            Menunggu Persetujuan
                         </p>
                         <p class="text-2xl font-bold text-charcoal">
                             {{ stats.pending }}
@@ -188,7 +188,7 @@ const getRoleBadge = (role) => {
                     </div>
                     <div class="ml-4">
                         <p class="text-sm font-medium text-gray-600">
-                            Rejected
+                            Ditolak
                         </p>
                         <p class="text-2xl font-bold text-charcoal">
                             {{ stats.rejected }}
@@ -226,9 +226,9 @@ const getRoleBadge = (role) => {
                     <div
                         class="grid grid-cols-12 gap-4 text-xs font-medium text-charcoal uppercase tracking-wider"
                     >
-                        <div class="col-span-3">User Info</div>
+                        <div class="col-span-3">Info User</div>
                         <div class="col-span-2">Email</div>
-                        <div class="col-span-2">Instansi</div>
+                        <div class="col-span-2">Divisi/Jabatan</div>
                         <div class="col-span-1">Role</div>
                         <div class="col-span-2">Status</div>
                         <div class="col-span-2">Actions</div>
@@ -333,7 +333,7 @@ const getRoleBadge = (role) => {
                                                 d="M5 13l4 4L19 7"
                                             />
                                         </svg>
-                                        Approve
+                                        Setujui
                                     </button>
 
                                     <!-- Reject Button -->
@@ -356,7 +356,7 @@ const getRoleBadge = (role) => {
                                                 d="M6 18L18 6M6 6l12 12"
                                             />
                                         </svg>
-                                        Reject
+                                        Tolak
                                     </button>
 
                                     <!-- Delete Button -->
@@ -378,7 +378,7 @@ const getRoleBadge = (role) => {
                                                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
                                             />
                                         </svg>
-                                        Delete
+                                        Hapus
                                     </button>
                                 </div>
                             </div>

@@ -151,7 +151,7 @@ const getGeneralFiles = () => {
                         <h1 class="text-2xl font-bold text-gray-900">
                             {{ rack?.name || "Unknown Rack" }}
                         </h1>
-                        <p class="text-sm text-gray-600">Files in this rack</p>
+                        <p class="text-sm text-gray-600">Rak File</p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-3">
@@ -172,7 +172,7 @@ const getGeneralFiles = () => {
                                 d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
                             />
                         </svg>
-                        Edit Rack
+                        Edit Rak
                     </Link>
                 </div>
             </div>
@@ -186,12 +186,12 @@ const getGeneralFiles = () => {
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                        📁 Rack Information
+                        📁 Informasi Rak
                     </h3>
                     <div class="space-y-2">
                         <div>
                             <span class="text-sm font-medium text-gray-500"
-                                >Name:</span
+                                >Nama:</span
                             >
                             <span class="text-sm text-gray-900 ml-2">{{
                                 rack?.name || "Unknown"
@@ -199,7 +199,7 @@ const getGeneralFiles = () => {
                         </div>
                         <div v-if="rack?.description">
                             <span class="text-sm font-medium text-gray-500"
-                                >Description:</span
+                                >Deskripsi:</span
                             >
                             <span class="text-sm text-gray-900 ml-2">{{
                                 rack.description
@@ -207,7 +207,7 @@ const getGeneralFiles = () => {
                         </div>
                         <div>
                             <span class="text-sm font-medium text-gray-500"
-                                >Created:</span
+                                >Dibuat:</span
                             >
                             <span class="text-sm text-gray-900 ml-2">{{
                                 rack?.created_at
@@ -222,12 +222,12 @@ const getGeneralFiles = () => {
 
                 <div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                        📊 Statistics
+                        📊 Statistik
                     </h3>
                     <div class="space-y-2">
                         <div>
                             <span class="text-sm font-medium text-gray-500"
-                                >Total Files:</span
+                                >Total File:</span
                             >
                             <span class="text-sm text-gray-900 ml-2">{{
                                 files?.total || 0
@@ -251,7 +251,7 @@ const getGeneralFiles = () => {
                     <div class="space-y-2">
                         <div>
                             <span class="text-sm font-medium text-gray-500"
-                                >Created by:</span
+                                >Dibuat Oleh:</span
                             >
                             <span class="text-sm text-gray-900 ml-2">{{
                                 rack?.creator?.name || "Unknown"
@@ -290,10 +290,10 @@ const getGeneralFiles = () => {
             >
                 <div class="px-6 py-4 border-b border-gray-200 bg-gray-50">
                     <h3 class="text-lg font-semibold text-gray-900">
-                        📄 General Files
+                        📄 File General
                     </h3>
                     <p class="text-sm text-gray-600">
-                        Files not assigned to any sub-rack
+                        File tidak ada di sub-rak mana pun
                     </p>
                 </div>
 
@@ -691,10 +691,10 @@ const getGeneralFiles = () => {
                     />
                 </svg>
                 <h3 class="mt-2 text-sm font-medium text-gray-900">
-                    No files in this rack
+                    Rak Ini Kosong
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">
-                    Files uploaded to this rack will appear here.
+                    File yang di upload ke rak ini akan tampil disini.
                 </p>
             </div>
         </div>
@@ -836,7 +836,7 @@ const getGeneralFiles = () => {
                                 <h4
                                     class="text-sm font-medium text-gray-900 mb-2"
                                 >
-                                    📄 Office Document Preview
+                                    📄 Document Preview
                                 </h4>
                                 <p class="text-xs text-gray-600 mb-3">
                                     Choose a viewer to preview this document:
