@@ -62,29 +62,29 @@ const adminStatCards = computed(() => [
 // Stats for User
 const userStatCards = computed(() => [
     {
-        title: "My Files",
-        subtitle: "Uploaded",
+        title: "File Saya",
+        subtitle: "Terupload",
         value: props.stats?.myFiles || 0,
         icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
         color: "blue",
     },
     {
-        title: "Storage Used",
-        subtitle: "By Me",
+        title: "Total Penyimpanan",
+        subtitle: "Dari Akun Saya",
         value: props.stats?.myStorage || "0 MB",
         icon: "M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4",
         color: "green",
     },
     {
-        title: "Recent Uploads",
-        subtitle: "This Week",
+        title: "Terakhir Diupload",
+        subtitle: "Minggu Ini",
         value: props.stats?.recentUploads || 0,
         icon: "M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12",
         color: "purple",
     },
     {
         title: "Downloads",
-        subtitle: "My Files",
+        subtitle: "File Saya",
         value: props.stats?.downloadCount || 0,
         icon: "M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
         color: "yellow",
@@ -187,7 +187,7 @@ const statCards = computed(() =>
             class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8"
         >
             <h3 class="text-lg font-semibold text-gray-900 mb-4">
-                Quick Actions
+                Fitur Utama
             </h3>
 
             <!-- Admin Actions -->
@@ -217,7 +217,7 @@ const statCards = computed(() =>
                         <div class="text-sm font-medium text-gray-900">
                             Manage Files
                         </div>
-                        <div class="text-xs text-gray-500">View all files</div>
+                        <div class="text-xs text-gray-500">Lihat Semua File</div>
                     </div>
                 </Link>
 
@@ -246,7 +246,7 @@ const statCards = computed(() =>
                         <div class="text-sm font-medium text-gray-900">
                             Manage Users
                         </div>
-                        <div class="text-xs text-gray-500">User approval</div>
+                        <div class="text-xs text-gray-500">Persetujuan User</div>
                     </div>
                 </Link>
 
@@ -275,7 +275,7 @@ const statCards = computed(() =>
                         <div class="text-sm font-medium text-gray-900">
                             Manage Racks
                         </div>
-                        <div class="text-xs text-gray-500">Categories</div>
+                        <div class="text-xs text-gray-500">Kategori</div>
                     </div>
                 </Link>
 
@@ -334,9 +334,9 @@ const statCards = computed(() =>
                     </div>
                     <div>
                         <div class="text-sm font-medium text-gray-900">
-                            My Files
+                            File Saya
                         </div>
-                        <div class="text-xs text-gray-500">View your files</div>
+                        <div class="text-xs text-gray-500">Lihat File Terupload</div>
                     </div>
                 </Link>
 
@@ -365,7 +365,7 @@ const statCards = computed(() =>
                         <div class="text-sm font-medium text-gray-900">
                             Upload File
                         </div>
-                        <div class="text-xs text-gray-500">Add new file</div>
+                        <div class="text-xs text-gray-500">Tambahkan File</div>
                     </div>
                 </Link>
 
@@ -389,9 +389,9 @@ const statCards = computed(() =>
                     </div>
                     <div>
                         <div class="text-sm font-medium text-gray-900">
-                            Need Help?
+                            Ada Keluhan?
                         </div>
-                        <div class="text-xs text-gray-500">Contact admin</div>
+                        <div class="text-xs text-gray-500">Kontak Admin/Teknisi</div>
                     </div>
                 </div>
             </div>
@@ -407,10 +407,10 @@ const statCards = computed(() =>
             >
                 <div>
                     <h3 class="text-lg font-semibold text-charcoal">
-                        🗂️ Racks Overview
+                        🗂️ Daftar Rak
                     </h3>
                     <p class="text-sm text-gray-600">
-                        Manage file organization categories
+                        Manage Rak dan Tambahkan Rak Baru
                     </p>
                 </div>
                 <Link
@@ -436,7 +436,7 @@ const statCards = computed(() =>
                             d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                         />
                     </svg>
-                    Manage All Racks
+                    Manage Semua Rak
                 </Link>
             </div>
 
@@ -480,7 +480,7 @@ const statCards = computed(() =>
                                     </span>
                                 </div>
                                 <p class="text-sm text-gray-500 mt-1">
-                                    {{ rack.description || "No description" }}
+                                    {{ rack.description || "Tanpa Deskripsi" }}
                                 </p>
 
                                 <!-- Sub-racks -->
@@ -614,7 +614,7 @@ const statCards = computed(() =>
                     :href="route('files.index')"
                     class="text-sm text-blue-600 hover:text-blue-700 font-medium"
                 >
-                    See all files
+                    Lihat Semua
                 </Link>
             </div>
 
@@ -633,22 +633,22 @@ const statCards = computed(() =>
                             <th
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                             >
-                                File Name
+                                Nama File
                             </th>
                             <th
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                             >
-                                Category
+                                Kategori
                             </th>
                             <th
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                             >
-                                Size
+                                Ukuran
                             </th>
                             <th
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                             >
-                                Rank
+                                Urutan
                             </th>
                         </tr>
                     </thead>

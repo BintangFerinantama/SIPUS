@@ -46,11 +46,9 @@ const submit = () => {
                         class="h-12 w-12 object-contain"
                     />
                 </div>
-                <h2 class="text-3xl font-extrabold text-white mb-2">
-                    Bergabung Dengan SIPUS
-                </h2>
-                <p class="text-pln-blue text-lg">
-                    Sistem Informasi Penyimpanan File
+                
+                <p class="text-pln-blue text-lg font-extrabold">
+                    SIPUS (Sistem Infromasi Penyimpanan Berkas UPP SUMBAGSEL 3)
                 </p>
             </div>
 
@@ -253,7 +251,7 @@ const submit = () => {
             <!-- Footer -->
             <div class="text-center">
                 <p class="text-sm text-pln-blue">
-                    © 2025 SIPUS. Sistem Informasi Penyimpanan File.
+                    © 2025 SIPUS. Sistem Informasi Penyimpanan Berkas.
                 </p>
             </div>
         </div>

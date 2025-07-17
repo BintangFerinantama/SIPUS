@@ -38,11 +38,9 @@ const submit = () => {
                         class="h-12 w-12 object-contain"
                     />
                 </div>
-                <h2 class="text-3xl font-extrabold text-white mb-2">
-                    Bergabung Dengan SIPUS
-                </h2>
-                <p class="text-pln-blue text-lg">
-                    Sistem Informasi Penyimpanan File
+                
+                <p class="text-pln-blue font-extrabold text-lg">
+                    Daftarkan Akun SIPUS
                 </p>
             </div>
 
@@ -138,7 +136,7 @@ const submit = () => {
                     <div>
                         <InputLabel
                             for="instansi"
-                            value="Instansi/Divisi"
+                            value="Divisi/Jabatan"
                             class="text-charcoal font-semibold"
                         />
                         <div class="mt-2 relative">
@@ -166,7 +164,7 @@ const submit = () => {
                                 v-model="form.instansi"
                                 required
                                 autocomplete="organization"
-                                placeholder="Masukkan nama instansi/divisi"
+                                placeholder="Masukkan Divisi/Jabatan"
                             />
                         </div>
                         <InputError
@@ -281,7 +279,7 @@ const submit = () => {
                                 </h3>
                                 <p class="text-sm text-amber-700 mt-1">
                                     Akun Anda perlu persetujuan dari admin
-                                    sebelum dapat digunakan untuk login.
+                                    sebelum dapat melakukan login.
                                 </p>
                             </div>
                         </div>
@@ -357,7 +355,7 @@ const submit = () => {
             <!-- Footer -->
             <div class="text-center">
                 <p class="text-sm text-pln-blue">
-                    © 2025 SIPUS. Sistem Informasi Penyimpanan File.
+                    © 2025 SIPUS. Sistem Informasi Penyimpanan Berkas.
                 </p>
             </div>
         </div>

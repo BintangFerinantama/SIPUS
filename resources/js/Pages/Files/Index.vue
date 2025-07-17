@@ -377,14 +377,14 @@ const LayoutComponent = computed(() =>
                 <div class="flex-1">
                     <h2 class="text-xl font-bold text-gray-900">
                         {{
-                            isAdmin ? "File Library" : "My Files & Shared Files"
+                            isAdmin ? "File Library" : "Daftar Semua File"
                         }}
                     </h2>
                     <p class="text-sm text-gray-600">
                         {{
                             isAdmin
                                 ? "Manage and organize all files in the system"
-                                : "Manage your files and view files from your unit/division"
+                                : "Kelola file Anda dan lihat file dari unit/divisi lain"
                         }}
                     </p>
                     <!-- Access info for users -->
@@ -405,8 +405,7 @@ const LayoutComponent = computed(() =>
                                 d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                             ></path>
                         </svg>
-                        You can view and download files from your unit/division,
-                        but can only edit/delete your own files
+                        Anda dapat melihat dan mendownload file dari unit/divisi lain, tetapi hanya dapat mengedit/menghapus file Anda sendiri
                     </div>
                 </div>
 
@@ -449,12 +448,12 @@ const LayoutComponent = computed(() =>
                         ]"
                     >
                         <div :class="isAdmin ? 'col-span-4' : 'col-span-5'">
-                            File Info
+                            Info Berkas
                         </div>
                         <div class="col-span-2">Rak</div>
-                        <div class="col-span-2">Size</div>
-                        <div v-if="isAdmin" class="col-span-2">Uploaded By</div>
-                        <div class="col-span-1">Date</div>
+                        <div class="col-span-2">Ukuran</div>
+                        <div v-if="isAdmin" class="col-span-2">Diupload Oleh</div>
+                        <div class="col-span-1">Tanggal</div>
                         <div class="col-span-1">Actions</div>
                     </div>
                 </div>
@@ -524,7 +523,7 @@ const LayoutComponent = computed(() =>
                                         <div class="text-sm text-gray-500">
                                             {{
                                                 file.description ||
-                                                "No description"
+                                                "Tanpa Deskripsi"
                                             }}
                                         </div>
                                         <!-- Tags display -->

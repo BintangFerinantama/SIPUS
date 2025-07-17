@@ -18,19 +18,21 @@ const mobileMenuOpen = ref(false);
                     <div class="flex items-center">
                         <div class="flex-shrink-0 flex items-center">
                             <div
-                                class="w-10 h-10 bg-pln-blue rounded-xl flex items-center justify-center shadow-sm"
+                                class=" items-center justify-center"
                             >
-                                <span class="text-white font-bold text-lg"
-                                    >S</span
-                                >
+                                <img
+                                    src="/pln.png"
+                                    alt="Logo PLN"
+                                    class="h-10 w-10 object-contain"
+                                />
                             </div>
                             <div class="ml-3">
-                                <span class="text-xl font-bold text-charcoal"
+                                <span class="text-xl py-1 font-bold text-charcoal"
                                     >SIPUS</span
                                 >
                                 <span
                                     class="ml-2 px-2 py-1 text-xs bg-light-blue text-pln-blue rounded-full"
-                                    >User Portal</span
+                                    >Dashboard User</span
                                 >
                             </div>
                         </div>
@@ -90,7 +92,7 @@ const mobileMenuOpen = ref(false);
                                         d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                                     />
                                 </svg>
-                                My Files
+                                File Saya
                             </Link>
                         </nav>
                     </div>
@@ -279,7 +281,7 @@ const mobileMenuOpen = ref(false);
         <footer class="bg-white border-t border-gray-200 mt-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                 <div class="text-center text-sm text-gray-500">
-                    © 2025 SIPUS - Sistem Pengelolaan Berkas. All rights
+                    © 2025 SIPUS - Sistem Penyimpanan Berkas. All rights
                     reserved.
                 </div>
             </div>
