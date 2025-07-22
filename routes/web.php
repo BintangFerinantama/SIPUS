@@ -62,6 +62,3 @@ Route::middleware(['auth', 'approved'])->group(function () {
 });
 
 require __DIR__.'/auth.php';
-
-// Debug route
-require __DIR__.'/debug.php';
