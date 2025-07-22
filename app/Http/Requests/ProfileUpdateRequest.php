@@ -25,6 +25,8 @@ class ProfileUpdateRequest extends FormRequest
                 'max:255',
                 Rule::unique(User::class)->ignore($this->user()->id),
             ],
+            'instansi' => ['required', 'string', 'max:255'],
+            'no_telp' => ['nullable', 'string', 'max:20'],
         ];
     }
 }

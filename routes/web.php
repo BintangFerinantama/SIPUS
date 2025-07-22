@@ -35,7 +35,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['au
 Route::middleware(['auth', 'approved'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::put('/password', [ProfileController::class, 'updatePassword'])->name('password.update');
+    Route::put('/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
     // Files
@@ -55,6 +55,7 @@ Route::middleware(['auth', 'approved'])->group(function () {
         
         // Rack management
         Route::resource('racks', RackController::class);
+        Route::get('/racks/{rack}/sub-racks/{subRack}', [RackController::class, 'showSubRack'])->name('racks.sub-racks.show');
         Route::get('/racks/{rack}/sub-racks/create', [RackController::class, 'createSubRack'])->name('racks.sub-racks.create');
         Route::post('/racks/{rack}/sub-racks', [RackController::class, 'storeSubRack'])->name('racks.sub-racks.store');
         Route::delete('/sub-racks/{subRack}', [RackController::class, 'destroySubRack'])->name('sub-racks.destroy');

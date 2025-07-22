@@ -28,30 +28,47 @@ class RackController extends Controller
     }
 
     /**
-     * Display the specified rack with files.
+     * Display the specified rack with sub-racks.
      */
     public function show(Rack $rack): Response
     {
-        $rack->load(['subRacks', 'creator']);
+        $rack->load(['creator']);
         
-        // Get files in this rack with related data
-        $files = $rack->files()
-            ->with(['uploader', 'subRack', 'tags'])
+        // Get sub-racks with file count
+        $subRacks = $rack->subRacks()
+            ->withCount('files')
+            ->latest()
+            ->get();
+        
+        return Inertia::render('Admin/Racks/Show', [
+            'rack' => $rack,
+            'subRacks' => $subRacks,
+        ]);
+    }
+
+    /**
+     * Display files in a specific sub-rack.
+     */
+    public function showSubRack(Rack $rack, SubRack $subRack): Response
+    {
+        // Ensure sub-rack belongs to the rack
+        if ($subRack->rack_id !== $rack->id) {
+            abort(404);
+        }
+
+        $subRack->load(['rack', 'creator']);
+        
+        // Get files in this sub-rack
+        $files = $subRack->files()
+            ->with(['uploader', 'rack', 'tags'])
             ->withCount('tags')
             ->latest()
             ->paginate(20);
         
-        // Get files by sub-rack for organization
-        $filesBySubRack = $rack->files()
-            ->with(['uploader', 'subRack', 'tags'])
-            ->get()
-            ->groupBy('sub_rack_id');
-        
-        return Inertia::render('Admin/Racks/Show', [
+        return Inertia::render('Admin/Racks/SubRackFiles', [
             'rack' => $rack,
+            'subRack' => $subRack,
             'files' => $files,
-            'filesBySubRack' => $filesBySubRack,
-            'subRacks' => $rack->subRacks,
         ]);
     }
 
