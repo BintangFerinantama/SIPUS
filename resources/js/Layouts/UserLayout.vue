@@ -94,6 +94,31 @@ const mobileMenuOpen = ref(false);
                                 </svg>
                                 Daftar File
                             </Link>
+
+                            <Link
+                                :href="route('tags.index')"
+                                :class="[
+                                    'inline-flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200',
+                                    route().current('tags.*')
+                                        ? 'bg-light-blue text-pln-blue border border-pln-blue'
+                                        : 'text-charcoal hover:text-dark-blue hover:bg-pln-gray',
+                                ]"
+                            >
+                                <svg
+                                    class="w-4 h-4 mr-2"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+                                    />
+                                </svg>
+                                Tags
+                            </Link>
                         </nav>
                     </div>
 
@@ -209,6 +234,19 @@ const mobileMenuOpen = ref(false);
                             @click="mobileMenuOpen = false"
                         >
                             My Files
+                        </Link>
+
+                        <Link
+                            :href="route('tags.index')"
+                            :class="[
+                                'block px-3 py-2 text-base font-medium rounded-lg',
+                                route().current('tags.*')
+                                    ? 'bg-blue-50 text-blue-700'
+                                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50',
+                            ]"
+                            @click="mobileMenuOpen = false"
+                        >
+                            Tags
                         </Link>
                     </div>
                 </div>

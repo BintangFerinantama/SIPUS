@@ -3,14 +3,16 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RackController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    if (auth()->check()) {
-        $user = auth()->user();
+    if (Auth::check()) {
+        $user = Auth::user();
         
         // Check if user is approved
         if ($user->status === 'approved') {
@@ -40,6 +42,9 @@ Route::middleware(['auth', 'approved'])->group(function () {
     Route::resource('files', FileController::class);
     Route::get('/files/{file}/download', [FileController::class, 'download'])->name('files.download');
     Route::get('/files/{file}/preview', [FileController::class, 'preview'])->name('files.preview');
+    
+    // Tags
+    Route::resource('tags', TagController::class);
     
     // Admin routes
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {

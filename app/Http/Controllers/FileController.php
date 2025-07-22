@@ -10,7 +10,6 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
@@ -148,10 +147,17 @@ class FileController extends Controller
         if ($request->filled('tags')) {
             $tagIds = [];
             foreach ($request->tags as $tagName) {
-                $tag = Tag::firstOrCreate(['name' => $tagName]);
-                $tagIds[] = $tag->id;
+                if (!empty(trim($tagName))) {
+                    $tag = Tag::firstOrCreate(
+                        ['name' => trim($tagName)],
+                        ['slug' => Str::slug(trim($tagName))]
+                    );
+                    $tagIds[] = $tag->id;
+                }
             }
-            $fileModel->tags()->sync($tagIds);
+            if (!empty($tagIds)) {
+                $fileModel->tags()->sync($tagIds);
+            }
         }
 
         return redirect()->route('files.index')
@@ -218,10 +224,17 @@ class FileController extends Controller
         if ($request->filled('tags')) {
             $tagIds = [];
             foreach ($request->tags as $tagName) {
-                $tag = Tag::firstOrCreate(['name' => $tagName]);
-                $tagIds[] = $tag->id;
+                if (!empty(trim($tagName))) {
+                    $tag = Tag::firstOrCreate(
+                        ['name' => trim($tagName)],
+                        ['slug' => Str::slug(trim($tagName))]
+                    );
+                    $tagIds[] = $tag->id;
+                }
             }
-            $file->tags()->sync($tagIds);
+            if (!empty($tagIds)) {
+                $file->tags()->sync($tagIds);
+            }
         } else {
             $file->tags()->detach();
         }
