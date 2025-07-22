@@ -17,9 +17,7 @@ const mobileMenuOpen = ref(false);
                     <!-- Logo and Brand -->
                     <div class="flex items-center">
                         <div class="flex-shrink-0 flex items-center">
-                            <div
-                                class=" items-center justify-center"
-                            >
+                            <div class="items-center justify-center">
                                 <img
                                     src="/pln.png"
                                     alt="Logo PLN"
@@ -27,7 +25,8 @@ const mobileMenuOpen = ref(false);
                                 />
                             </div>
                             <div class="ml-3">
-                                <span class="text-xl py-1 font-bold text-charcoal"
+                                <span
+                                    class="text-xl py-1 font-bold text-charcoal"
                                     >SIPUS</span
                                 >
                                 <span

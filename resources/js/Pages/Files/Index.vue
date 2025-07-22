@@ -376,9 +376,7 @@ const LayoutComponent = computed(() =>
             >
                 <div class="flex-1">
                     <h2 class="text-xl font-bold text-gray-900">
-                        {{
-                            isAdmin ? "Daftar File" : "Daftar Semua File"
-                        }}
+                        {{ isAdmin ? "Daftar File" : "Daftar Semua File" }}
                     </h2>
                     <p class="text-sm text-gray-600">
                         {{
@@ -405,7 +403,9 @@ const LayoutComponent = computed(() =>
                                 d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                             ></path>
                         </svg>
-                        Anda dapat melihat dan mendownload file dari unit/divisi lain, tetapi hanya dapat mengedit/menghapus file Anda sendiri
+                        Anda dapat melihat dan mendownload file dari unit/divisi
+                        lain, tetapi hanya dapat mengedit/menghapus file Anda
+                        sendiri
                     </div>
                 </div>
 
@@ -452,7 +452,9 @@ const LayoutComponent = computed(() =>
                         </div>
                         <div class="col-span-2">Rak</div>
                         <div class="col-span-2">Ukuran</div>
-                        <div v-if="isAdmin" class="col-span-2">Diupload Oleh</div>
+                        <div v-if="isAdmin" class="col-span-2">
+                            Diupload Oleh
+                        </div>
                         <div class="col-span-1">Tanggal</div>
                         <div class="col-span-1">Actions</div>
                     </div>
