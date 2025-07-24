@@ -15,39 +15,45 @@ class DefaultUserSeeder extends Seeder
     public function run(): void
     {
         // Create Admin User
-        User::create([
-            'name' => 'Administrator',
-            'email' => 'admin@sipus.com',
-            'password' => Hash::make('admin123'),
-            'instansi' => 'SIPUS Administrator',
-            'role' => 'admin',
-            'status' => 'approved',
-            'approved_at' => now(),
-            'email_verified_at' => now(),
-        ]);
+        User::updateOrCreate(
+            ['email' => 'admin@sipus.com'],
+            [
+                'name' => 'Administrator',
+                'password' => Hash::make('admin123'),
+                'instansi' => 'SIPUS Administrator',
+                'role' => 'admin',
+                'status' => 'approved',
+                'approved_at' => now(),
+                'email_verified_at' => now(),
+            ]
+        );
 
         // Create Regular User (Approved)
-        User::create([
-            'name' => 'Akhyar Nasrullah Adilian',
-            'email' => 'akhyar@example.com',
-            'password' => Hash::make('user123'),
-            'instansi' => 'Universitas Lampung',
-            'role' => 'user',
-            'status' => 'approved',
-            'approved_at' => now(),
-            'approved_by' => 1, // Approved by admin
-            'email_verified_at' => now(),
-        ]);
+        User::updateOrCreate(
+            ['email' => 'akhyar@example.com'],
+            [
+                'name' => 'Akhyar Nasrullah Adilian',
+                'password' => Hash::make('user123'),
+                'instansi' => 'Universitas Lampung',
+                'role' => 'user',
+                'status' => 'approved',
+                'approved_at' => now(),
+                'approved_by' => 1, // Approved by admin
+                'email_verified_at' => now(),
+            ]
+        );
 
         // Create Pending User
-        User::create([
-            'name' => 'User Pending',
-            'email' => 'pending@example.com',
-            'password' => Hash::make('user123'),
-            'instansi' => 'Instansi Testing',
-            'role' => 'user',
-            'status' => 'pending',
-            'email_verified_at' => now(),
-        ]);
+        User::updateOrCreate(
+            ['email' => 'pending@example.com'],
+            [
+                'name' => 'User Pending',
+                'password' => Hash::make('user123'),
+                'instansi' => 'Instansi Testing',
+                'role' => 'user',
+                'status' => 'pending',
+                'email_verified_at' => now(),
+            ]
+        );
     }
 }
